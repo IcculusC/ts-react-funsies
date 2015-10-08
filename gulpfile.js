@@ -17,7 +17,7 @@ gulp.task('typescript', function() {
 });
 
 gulp.task('browserify', ['typescript'], function() {
-  browserify('./src/js/main.js')
+  return browserify('./src/js/main.js')
     .transform('reactify')
     .bundle()
     .pipe(source('bundle.js'))
