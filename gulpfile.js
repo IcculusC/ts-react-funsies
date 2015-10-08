@@ -6,7 +6,7 @@ var ts = require('gulp-typescript');
 var uglify = require('gulp-uglify');
 
 gulp.task('typescript', function() {
-  gulp.src('./src/ts/**/*.tsx')
+  return gulp.src('./src/ts/**/*.tsx')
     .pipe(ts({
       outDir: './src/js',
       module: 'commonjs',
