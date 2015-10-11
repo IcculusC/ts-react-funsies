@@ -1,8 +1,10 @@
 /// <reference path="dependencies/react.d.ts" />
 /// <reference path="dependencies/react-router.d.ts" />
+/// <reference path="dependencies/qajax.d.ts" />
 
 import React = require('react');
 import Router = require('react-router');
+import Qajax = require('qajax');
 
 let DefaultRoute = Router.DefaultRoute;
 let Route = Router.Route;
