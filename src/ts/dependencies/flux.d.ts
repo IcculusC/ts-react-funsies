@@ -60,24 +60,6 @@ declare module Flux {
         */
         isDispatching(): boolean;
     }
-    
-    export class FluxStore {
-      constructor(dispatcher: Dispatcher<any>)
-      
-      addListener(callback: (callback: any) => void): any;
-      
-      getDispatcher(): Dispatcher<any>;
-      
-      getDispatchToken(): string;
-      
-      hasChanged(): boolean;
-      
-      __emitChange(): void;
-      
-      __invokeOnDispatch(): void;
-      
-      __onDispatch(): void;
-    }
 }
 
 declare module "flux" {

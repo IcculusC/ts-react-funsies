@@ -4,8 +4,6 @@
 import React = require('react');
 import flux = require('flux');
 
-let Store = flux.FluxStore;
-
 import AppDispatcher = require('../dispatchers/AppDispatcher');
 
 import Header = require('./Header');
