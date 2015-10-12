@@ -1,5 +1,5 @@
-/// <reference path="dependencies/react.d.ts" />
-/// <reference path="dependencies/react-router.d.ts" />
+/// <reference path="typings/react/react.d.ts" />
+/// <reference path="typings/react-router/react-router.d.ts" />
 
 import React = require('react');
 import Router = require('react-router');
