@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-/// <reference path="../dependencies/react.d.ts" />
-/// <reference path="../dependencies/react-router.d.ts" />
-=======
 /// <reference path="../typings/react/react.d.ts" />
 /// <reference path="../typings/react-router/react-router.d.ts" />
 /// <reference path="../typings/qajax/qajax.d.ts" />
->>>>>>> master
 
 import React = require('react');
 import flux = require('flux');
