@@ -7,6 +7,26 @@ interface IAppAction {
   payload?: any;
 }
 
-let AppDispatcher: flux.Dispatcher<IAppAction> = new flux.Dispatcher();
+class AppDispatcher extends flux.Dispatcher<IAppAction> {
+  private static _instance: AppDispatcher = new AppDispatcher();
+  
+  constructor() {
+    if(AppDispatcher._instance) {
+      throw new Error("Error:  Instantiation failed:  AppDispatcher already instantiated, use AppDispatcher.instance");
+    }
+    
+    AppDispatcher._instance = this;
+    
+    super();
+  }
+  public static get instance() {
+    return this._instance;
+  }
+   
+}
 
-export = AppDispatcher;
+export = AppDispatcher.instance;
+
+// let AppDispatcher: flux.Dispatcher<IAppAction> = new flux.Dispatcher();
+
+// export = AppDispatcher;
