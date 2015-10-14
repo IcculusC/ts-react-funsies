@@ -2,10 +2,12 @@
 /// <reference path="typings/react-router/react-router.d.ts" />
 
 import React = require('react');
-import Router = require('react-router');
+import ReactRouter = require('react-router');
 
-let DefaultRoute = Router.DefaultRoute;
-let Route = Router.Route;
+let DefaultRoute = ReactRouter.DefaultRoute;
+let Route = ReactRouter.Route;
+
+import Router = require('./router/Router');
 
 import App = require('./components/App');
 import Home = require('./components/Home');
@@ -19,6 +21,8 @@ let routes = (
   </Route>
 );
 
-Router.run(routes, (Handler) => {
+let router = new Router(routes);
+
+router.run((Handler) => {
   React.render(<Handler />, document.body);
 });
