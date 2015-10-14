@@ -6,6 +6,7 @@ import React = require('react');
 import flux = require('flux');
 
 import AppDispatcher = require('../dispatchers/AppDispatcher');
+import AppStore = require('../stores/AppStore');
 
 import Header = require('./Header');
 import Footer = require('./Footer');
@@ -19,21 +20,23 @@ class App extends React.Component<any, any> {
   constructor() {
     console.log('App.constructor()');
     
-    this._appToken = AppDispatcher.register(function() {
-      console.log(arguments);
-    });
-    
-    AppDispatcher.dispatch({ action: 'TEST', payload: 'ACTION' });
-    
-    console.log(this._appToken);
-    console.log(this.appToken);
+    this._appToken = AppDispatcher.register(this._handleDispatch.bind(this));
+        
+    AppStore.addListener(this._changeListener.bind(this));
     
     super();
   }
   get appToken() {
     return this._appToken;
   }
-  componentDidMount() {}
+  _changeListener() {
+    console.log('App._changeListener()');
+    console.log(this);
+  }
+  _handleDispatch() {
+    console.log('App._handleDispatch()');
+    console.log(this);
+  }
   render() {
     return (
       <section className="application">

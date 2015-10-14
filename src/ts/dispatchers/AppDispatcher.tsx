@@ -26,7 +26,3 @@ class AppDispatcher extends flux.Dispatcher<IAppAction> {
 }
 
 export = AppDispatcher.instance;
-
-// let AppDispatcher: flux.Dispatcher<IAppAction> = new flux.Dispatcher();
-
-// export = AppDispatcher;
