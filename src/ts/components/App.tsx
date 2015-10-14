@@ -23,7 +23,7 @@ class App extends React.Component<any, any> {
     this._appToken = AppDispatcher.register(this._handleDispatch.bind(this));
         
     AppStore.addListener(this._changeListener.bind(this));
-    
+        
     super();
   }
   get appToken() {
@@ -31,11 +31,9 @@ class App extends React.Component<any, any> {
   }
   _changeListener() {
     console.log('App._changeListener()');
-    console.log(this);
   }
-  _handleDispatch() {
+  _handleDispatch(payload) {
     console.log('App._handleDispatch()');
-    console.log(this);
   }
   render() {
     return (

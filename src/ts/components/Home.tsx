@@ -5,14 +5,12 @@ import AppDispatcher = require('../dispatchers/AppDispatcher');
 
 class Home extends React.Component<any, any> {
   constructor() {
-    AppDispatcher.register(function() {
-      console.log('Home._handleDispatch()');
-      console.log(arguments);
-    });
-  
-    AppDispatcher.dispatch({ action: 'TEST' });
-  
+    AppDispatcher.register(this._handleDispatch.bind(this));
+    
     super();
+  }
+  _handleDispatch(payload) {
+    console.log('Home._handleDispatch()');
   }
   render() {
     return (
