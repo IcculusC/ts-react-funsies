@@ -1,3 +1,8 @@
-/// <reference path='../typings/eventemitter3/eventemitter3.d.ts' />
-
-import eventemitter3 = require('eventemitter3');
+class Flux {
+  private _dispatcher: any;
+  private _stores: {};
+  
+  constructor(stores: {}) {
+  
+  }
+}
