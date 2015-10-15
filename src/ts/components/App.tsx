@@ -15,7 +15,7 @@ let RouteHandler = Router.RouteHandler;
 class App extends React.Component<any, any> {
   constructor() {
     console.log('App.constructor()');
-
+    
     super();
   }
   render() {
