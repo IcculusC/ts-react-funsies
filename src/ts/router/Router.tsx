@@ -5,6 +5,21 @@ import React = require('react');
 import ReactRouter = require('react-router');
 import AppDispatcher = require('../dispatchers/AppDispatcher');
 
+let DefaultRoute = ReactRouter.DefaultRoute;
+let Route = ReactRouter.Route;
+
+import App = require('../components/App');
+import Home = require('../components/Home');
+import About = require('../components/About');
+
+let routes = (
+  <Route name="app" path="/" handler={App}>
+    <Route name="home" handler={Home} />
+    <Route name="about" handler={About} />
+    <DefaultRoute handler={Home} />
+  </Route>
+);
+
 class Router {
 
   private static _instance: Router;
@@ -13,7 +28,7 @@ class Router {
   
   constructor(routes: any) {
     if(Router._instance) {
-      return Router._instance;
+      throw new Error("Error:  Instantiation failed:  Router already instantiated, use Router.instance");
     }
     
     Router._instance = this;
@@ -22,12 +37,13 @@ class Router {
     
     this._appToken = AppDispatcher.register(this._handleDispatch.bind(this));
   }
-  
-  static get instance(): Router {  
+
+  public static get instance(): Router {  
     return Router._instance;
   }
+
   
-  static get router() : any {
+  public static get router() : any {
     return Router._router;
   }
   
@@ -68,4 +84,4 @@ class Router {
   _handleDispatch(payload): void {}
 }
 
-export = Router;
+export = new Router(routes);

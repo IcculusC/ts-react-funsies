@@ -3,6 +3,7 @@
 
 import React = require('react');
 import Router = require('react-router');
+import RouterLink = require('../Router/RouterLink');
 
 let Link = Router.Link;
 
@@ -16,6 +17,7 @@ class Header extends React.Component<IHeaderProps, any> {
           <ul className="nav navbar-nav">
             <li><Link to="home">Home</Link></li>
             <li><Link to="about">About</Link></li>
+            <li><RouterLink to="home">Home</RouterLink></li>
           </ul>
         </div>
       </nav>
